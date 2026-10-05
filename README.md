@@ -1,58 +1,92 @@
-# Trabalho Prático 01 - Programação Orientada a Objetos
+# Trabalho Prático 01 — Programação Orientada a Objetos
 
-## Sistema de Gerenciamento de Escola
+## Descrição
 
-Este projeto foi desenvolvido em Python para representar um sistema simples de gerenciamento de uma escola, utilizando conceitos de Programação Orientada a Objetos.
+Este projeto foi desenvolvido como parte da disciplina de **Programação Orientada a Objetos (POO)**, utilizando a linguagem **Python**.
 
-## Classes
+O projeto apresenta a implementação de um sistema simplificado para gerenciamento de uma escola, aplicando conceitos fundamentais da Programação Orientada a Objetos e os relacionamentos entre classes representados em UML.
 
-O sistema possui cinco classes:
+## Objetivo
 
-- Escola
-- SalaDeAula
-- Professor
-- Aluno
-- Endereco
+O objetivo do trabalho é representar, por meio de classes em Python, um cenário de gerenciamento escolar envolvendo:
 
-## Relacionamentos
+* Escola;
+* Sala de Aula;
+* Professor;
+* Aluno;
+* Endereço.
 
-### Composição
+Também são demonstrados os seguintes relacionamentos entre as classes:
 
-**Escola → SalaDeAula**
+* **Composição**;
+* **Associação**;
+* **Agregação**.
 
-As salas de aula fazem parte da escola e, de acordo com o cenário proposto, dependem dela para existir no sistema.
+## Classes do sistema
 
-Representação:
+### Escola
 
-`Escola ◆── SalaDeAula`
+Representa uma escola.
 
-### Associação
+**Atributos:**
 
-**Escola ↔ Professor**
+* `nome: str`
+* `cnpj: str`
+* `salas: list`
+* `professores: list`
 
-A escola e o professor podem existir independentemente. Um professor também pode lecionar em mais de uma escola.
+**Métodos:**
 
-Representação:
+* `adicionar_sala()`
+* `adicionar_professor()`
+* `mostrar_escola()`
 
-`Escola ── Professor`
+### SalaDeAula
 
-### Agregação
+Representa uma sala de aula pertencente à escola.
 
-**Aluno ◇── Endereco**
+**Atributos:**
 
-O endereço está associado ao aluno, porém pode continuar existindo mesmo após a remoção do aluno.
+* `numero: int`
+* `capacidade: int`
 
-Representação:
+**Método:**
 
-`Aluno ◇── Endereco`
+* `mostrar_sala()`
 
-## Execução
+### Professor
 
-O arquivo `trabalho_pratico_01.py` apresenta no terminal exemplos dos três tipos de relacionamento.
+Representa um professor que pode lecionar em diferentes escolas.
 
-## Tecnologias utilizadas
+**Atributos:**
 
-- Python
-- Programação Orientada a Objetos
-- UML
-- Git e GitHub
+* `nome: str`
+* `disciplina: str`
+* `matricula: str`
+* `escolas: list`
+
+**Métodos:**
+
+* `adicionar_escola()`
+* `mostrar_escolas()`
+
+### Aluno
+
+Representa um aluno matriculado na escola.
+
+**Atributos:**
+
+* `nome: str`
+* `matricula: str`
+* `idade: int`
+* `endereco: Endereco`
+
+**Método:**
+
+* `mostrar_aluno()`
+
+### Endereco
+
+Representa o endereço associado ao aluno.
+
+**Atributos:**
